@@ -12,6 +12,7 @@ const event_button = document.querySelector('.event-button');
 const event_close = document.querySelector('.event-close');
 const event_up = document.querySelector('.display .desc a');
 const tab_content1 = document.querySelectorAll('.tab-content');
+const artist_contents = document.querySelectorAll('.artist-content-box');
 
 getin_button.addEventListener('click', () => {
     first_page.classList.toggle('active');
@@ -57,6 +58,15 @@ tabs_2.forEach((e) => {
     e.addEventListener('click', () => {
         removeTabs2();
         e.classList.add('active');
+        if(e.classList.contains('active')) {
+            for(let i = 0; i < tabs_2.length; i++) {
+                if(e.id === artist_contents[i].id) {
+                    artist_contents[i].classList.add('show');
+                } else {
+                    artist_contents[i].classList.remove('show');
+                }
+            }
+        }
     })
 })
 
