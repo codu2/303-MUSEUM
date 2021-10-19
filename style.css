@@ -361,10 +361,19 @@ a {
 }
 
 .artist-content {
+  position: relative;
+}
+
+.artist-content-box.show {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  position: absolute;
+}
+
+.artist-content-box {
+  display: none;
 }
 
 .artist-photo {
