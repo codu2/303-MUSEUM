@@ -19,6 +19,32 @@ const artist_tab = document.querySelector('.artist-box');
 const previous_tab2 = document.querySelector('.previous-tab2');
 const next_tab2 = document.querySelector('.next-tab2');
 
+const story_button = document.querySelector('.story-button');
+const story = document.querySelector('.story');
+const story_previous = document.querySelector('.story-previous');
+const bookmark = document.querySelector('.bookmark');
+
+bookmark.addEventListener('click', () => {
+    if(bookmark.querySelector('i').classList == 'ri-bookmark-line') {
+        bookmark.querySelector('i').classList.replace('ri-bookmark-line','ri-bookmark-fill');
+    } else {
+        bookmark.querySelector('i').classList.replace('ri-bookmark-fill','ri-bookmark-line');
+    }
+    
+})
+
+story_button.addEventListener('click', () => {
+    main_content.classList.remove('active');
+    story.classList.add('active');
+    story_button.style.color = '#9b1b30';
+})
+
+story_previous.addEventListener('click', () => {
+    story.classList.remove('active');
+    main_content.classList.add('active');
+    story_button.style.color = '#fff';
+})
+
 previous_tab.addEventListener('click', () => {
     painting_tab.classList.add('move');
 })
